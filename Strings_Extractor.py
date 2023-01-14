@@ -9,9 +9,22 @@ def extract_strings(file_path):
 
 strings, urls = extract_strings('file.bin')
 
+if strings:
+    print("***********************************Strings Found***********************************: ")
+    for string in strings:
+        print(string)
+else:
+    print("***********************************No Strings Found***********************************")
+
+if urls:
+    print("***********************************Urls Found***********************************: ")
+    for url in urls:
+        print(url)
+else:
+    print("***********************************No Urls Found***********************************")
+
 with open('output.txt', 'w') as f:
     for string in strings:
         f.write(string + '\n')
     for url in urls:
         f.write(url + '\n')
-
